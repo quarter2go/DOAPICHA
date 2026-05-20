@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DOAPICHA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+    padding:40px 20px 80px;
+}
+
+.mork{
+    position:fixed;
+    inset:0;
+   background:url("icon.png") center center/cover no-repeat;
+    transform:scale(1.15);
+    filter:blur(14px) brightness(.42);
+    z-index:-3;
+    animation:floatbg 18s ease-in-out infinite alternate;
+}
+
+.tint{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(to bottom,
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.5));
+    z-index:-2;
+}
+
+@keyframes floatbg{
+    from{
+        transform:scale(1.15) translateY(0px);
+    }
+    to{
+        transform:scale(1.2) translateY(-12px);
+    }
+}
+
+.wrapzone{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+}
+
+.bigvibe{
+    font-size:58px;
+    font-weight:700;
+    line-height:.95;
+    margin-bottom:22px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:titleDrop 1s forwards;
+    text-shadow:0 8px 30px rgba(0,0,0,.4);
+}
+
+@keyframes titleDrop{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.piczone{
+    width:100%;
+    height:240px;
+    border-radius:30px;
+    overflow:hidden;
+    margin-bottom:28px;
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    opacity:0;
+    transform:scale(.95);
+    animation:picPop 1s .2s forwards;
+}
+
+@keyframes picPop{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.piczone img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.stackkk{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.zzitem{
+    background:#f3f3f3;
+    color:black;
+    text-decoration:none;
+    border-radius:24px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transform:translateY(30px);
+    opacity:0;
+    animation:rise .7s forwards;
+    transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.zzitem:nth-child(1){animation-delay:.2s;}
+.zzitem:nth-child(2){animation-delay:.35s;}
+.zzitem:nth-child(3){animation-delay:.5s;}
+.zzitem:nth-child(4){animation-delay:.65s;}
+.zzitem:nth-child(5){animation-delay:.8s;}
+
+@keyframes rise{
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.zzitem:hover{
+    transform:scale(1.025);
+    background:white;
+}
+
+.zzitem:active{
+    transform:scale(.98);
+}
+
+.lefty{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.lefty img{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    object-fit:cover;
+}
+
+.kek{
+    font-size:20px;
+    font-weight:600;
+}
+
+.arr{
+    font-size:30px;
+    transition:transform .2s ease;
+}
+
+.zzitem:hover .arr{
+    transform:translateX(4px);
+}
+
+.lowtxt{
+    text-align:center;
+    margin-top:30px;
+    font-size:13px;
+    color:rgba(255,255,255,.72);
+    line-height:1.7;
+    opacity:.9;
+}
+
+@media(max-width:600px){
+
+    body{
+        padding:30px 16px 70px;
+    }
+
+    .bigvibe{
+        font-size:46px;
+    }
+
+    .piczone{
+        height:210px;
+    }
+
+    .kek{
+        font-size:17px;
+    }
+
+    .lefty img{
+        width:52px;
+        height:52px;
+    }
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="mork"></div>
+<div class="tint"></div>
+
+<div class="wrapzone">
+
+    <h1 class="bigvibe">DOAPICHA</h1>
+
+    <div class="piczone">
+        <img src="icon.png">
+    </div>
+
+    <div class="stackkk">
+
+        <a href="https://www.youtube.com/watch?v=AeyAAro9R04" class="zzitem">
+            <div class="lefty">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+                <div class="kek">Listen on YouTube</div>
+            </div>
+            <div class="arr">→</div>
+        </a>
+
+        <a href="https://open.spotify.com/track/5Mt6e4LIXEjEpr301WzfuT?si=6c2ba545603740ab" class="zzitem">
+            <div class="lefty">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png">
+                <div class="kek">Stream on Spotify</div>
+            </div>
+            <div class="arr">→</div>
+        </a>
+
+        <a href="https://music.apple.com/us/song/ร-กน-ร-นดร/6769313105" class="zzitem">
+            <div class="lefty">
+                <img src="https://cdn-icons-png.flaticon.com/512/731/731985.png">
+                <div class="kek">Stream on Apple Music</div>
+            </div>
+            <div class="arr">→</div>
+        </a>
+
+
+<a href="https://www.joox.com/th/single/k7uNjklYlQC74Lfkj1PO1w==" class="zzitem">
+    <div class="lefty">
+        <img src="JOOX.jpg.webp">
+        <div class="kek">Listen on JOOX</div>
+    </div>
+    <div class="arr">→</div>
+
+</a>
+
+
+        <a href="https://www.instagram.com/doapicha_/" class="zzitem">
+            <div class="lefty">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+                <div class="kek">Follow on Instagram</div>
+            </div>
+            <div class="arr">→</div>
+        </a>
+
+        <a href="https://www.tiktok.com/@doapicha_" class="zzitem">
+            <div class="lefty">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+                <div class="kek">Follow on TikTok</div>
+            </div>
+            <div class="arr">→</div>
+        </a>
+
+    </div>
+
+    <div class="lowtxt">
+        By using this site you agree to the Terms Of Use<br>
+        and Privacy Policy
+    </div>
+
+</div>
+
+<script>
+
+const cards = document.querySelectorAll('.zzitem')
+
+cards.forEach(el=>{
+
+    el.addEventListener('mousemove',e=>{
+
+        const rect = el.getBoundingClientRect()
+
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+
+        const moveX = (x - rect.width/2) / 25
+        const moveY = (y - rect.height/2) / 25
+
+        el.style.transform =
+        `rotateX(${-moveY}deg) rotateY(${moveX}deg) scale(1.02)`
+
+    })
+
+    el.addEventListener('mouseleave',()=>{
+
+        el.style.transform =
+        'rotateX(0) rotateY(0) scale(1)'
+
+    })
+
+})
+
+</script>
+
+</body>
+</html>
